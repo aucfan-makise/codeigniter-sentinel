@@ -1,0 +1,15 @@
+{
+    "name": "codeigniter/codeigniter",
+    "type": "project",
+    "description" : "Install codeigniter.",
+    "require": {
+        "codeigniter/framework": "dev-master",
+        "cartalyst/sentinel" :  "2.0.*",
+        "illuminate/database" : "5.2.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.3.*",
+        "kenjis/ci-phpunit-test": "dev-master",
+        "codeception/aspect-mock": "*"
+    }
+}

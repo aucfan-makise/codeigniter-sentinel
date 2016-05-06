@@ -1,0 +1,9 @@
+{
+  "name": "elasticsearch",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "run_list": [
+    "recipe[elastic::elasticsearch]",
+    "recipe[elastic::kibana]"
+  ]
+}

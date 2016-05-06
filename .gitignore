@@ -1,0 +1,4 @@
+.idea
+vendor
+application/tests/build
+application/tests/AspectMock
