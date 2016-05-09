@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+use Cartalyst\Sentinel\Native\Facades\Sentinel as Sentinel;
+use Illuminate\Database\Capsule\Manager as Capsule;
 class Welcome extends CI_Controller {
 
 	/**
@@ -20,6 +22,26 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$capsule = new Capsule;
+
+		$capsule->addConnection([
+			'driver'    => 'mysql',
+			'host'      => 'localhost',
+			'database'  => 'sentinel',
+			'username'  => 'vagrant',
+			'password'  => 'vagrant',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+		]);
+
+		$capsule->bootEloquent();
+
+		$instance = new Sentinel();
+		$sentinel = $instance->getSentinel(); /* @var $sentinel \Cartalyst\Sentinel\Sentinel */
+		$sentinel->register([
+			'email'    => 'test@example.com',
+			'password' => 'foobar',
+		]);
 		$this->load->view('welcome_message');
 	}
 
