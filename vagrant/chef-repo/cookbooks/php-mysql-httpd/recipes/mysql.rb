@@ -4,14 +4,14 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
-command = "cat /etc/redhat-release | awk " + '\'BEGIN{FS="[.[:space:]]"}{print $4}\''
-version = `command`
-p version
+version = `cat /etc/redhat-release`
     
-if to_i(version) >= 7 then
+if version.match(/^CentOS Linux release 7\..*/) then
     required = ['mariadb', 'mariadb-server']
+    serviced = 'mariadb'
 else
     required = ['mysql', 'mysql-server']
+    serviced = 'mysqld'
 end
 
 required.each do |name|
@@ -20,6 +20,6 @@ required.each do |name|
   end
 end
 
-service "mysqld" do
+service serviced do
   action [:start, :enable]
 end

@@ -1,4 +1,7 @@
 <VirtualHost *:80>
+  DocumentRoot /deploy/codeigniter-sentinel/public
   ServerName codeigniter.aucfan.com
-  DocumentRoot /deploy/codeigniter-centinel/public
+  <Directory "/deploy/codeigniter-sentinel/public/">
+    Require all granted
+  </Directory>
 </VirtualHost>

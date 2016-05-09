@@ -71,7 +71,7 @@ Vagrant.configure(2) do |config|
   config.vm.define :codeigniter do |web|
     web.vm.network :private_network, ip: "192.168.33.123"
     web.vm.hostname = "codeigniter-vagrant"
-    web.vm.synced_folder "../", "/deploy/codeigniter-test", :create => true, :owner => 'vagrant', :group => 'vagrant'
+    web.vm.synced_folder "../", "/deploy/codeigniter-sentinel", :create => true, :owner => 'vagrant', :group => 'vagrant'
   end
 
   config.ssh.forward_agent = true
