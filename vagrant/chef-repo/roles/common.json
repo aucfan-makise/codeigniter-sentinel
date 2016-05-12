@@ -4,8 +4,7 @@
   "json_class": "Chef::Role",
   "run_list": [
     "recipe[common]",
-    "recipe[php-mysql-httpd::php]",
-    "recipe[php-mysql-httpd::mysql]",
-    "recipe[php-mysql-httpd::httpd]"
+    "recipe[php-httpd::php]",
+    "recipe[php-httpd::httpd]"
   ]
 }

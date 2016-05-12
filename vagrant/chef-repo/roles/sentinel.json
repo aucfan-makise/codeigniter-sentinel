@@ -1,0 +1,9 @@
+{
+  "name": "sentinel",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "run_list": [
+    "recipe[mysql::default]",
+    "recipe[mysql::sentinel]"
+  ]
+}
