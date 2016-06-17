@@ -8,3 +8,11 @@
 package "epel-release" do
     action :install
 end
+
+package "git" do
+    action :install
+end
+
+package "zip" do
+    action :install
+end
