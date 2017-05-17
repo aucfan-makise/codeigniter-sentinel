@@ -14,6 +14,7 @@ end
     action :install
     options "--enablerepo=remi-php#{node.php.version}"
   end
+end
 
 template "/etc/php.d/php.local.ini" do
   source "php.local.ini.erb"
@@ -26,5 +27,4 @@ template "/etc/php.d/15-xdebug.ini" do
     owner 'root'
     group 'root'
     mode 644
-end
 end
